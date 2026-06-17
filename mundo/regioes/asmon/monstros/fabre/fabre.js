@@ -7,7 +7,7 @@ let fabre = {
     imagem: "../../img/monstros/fabre.jpg",
     nivel: 2,
     vida_maxima: 15,
-    vida_atual: 15,
+    vida_atual: 2,
     ataque_minimo: 1,
     ataque_maximo: 4,
     defesa_minima: 0,

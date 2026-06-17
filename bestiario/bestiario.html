@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarCraker - Bestiário</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="bestiario.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">DarCraker</div>
+        <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
+    </div>
+
+    <nav id="sidebar" class="sidebar">
+        <div class="sidebar-content">
+            <a href="../inicio/inicio.html" id="btn-home" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../img/icones/inicio.jpg" id="img-home" alt="Início" class="sidebar-img">
+                <span>Início</span>
+            </a>
+            
+            <a href="../heroi/heroi.html" id="btn-heroi" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../img/icones/heroi.jpg" id="img-heroi" alt="Herói" class="sidebar-img">
+                <span>Herói</span>
+            </a>
+            
+            <a href="../mundo/mundo.html" id="btn-mundo" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../img/icones/mundo.jpg" id="img-mundo" alt="Mundo" class="sidebar-img">
+                <span>Mundo</span>
+            </a>
+
+            <a href="../index.html" id="btn-sair" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../img/icones/sair.jpg" id="img-sair" alt="Sair" class="sidebar-img">
+                <span>Sair</span>
+            </a>
+            
+            <hr class="sidebar-divider">
+            
+            <a href="#" onclick="salvarNoSlotAtual(); return false;" class="sidebar-link btn-nav-save">
+                <span>💾 Salvar no Slot</span>
+            </a>
+            
+            <a href="#" onclick="exportarSaveFisico(); return false;" class="sidebar-link btn-nav-export">
+                <span>📤 Exportar Backup</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="game-container">
+        <div class="bestiario-header">
+            <h2>Bestiário</h2>
+
+            <!-- Imagem Temática do Bestiário adicionada aqui -->
+            <div class="bestiario-container">
+                <img src="../img/icones/bestiario.jpg" alt="Ícone Bestiário" class="bestiario-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="bestiario-icon" style="display: none;">🐉</div>
+            </div>
+
+            <p>Encontre aqui todos os monstros do mundo de DarCraker, suas informações, fraquezas e drops. Equipamentos, Informações dos Pets, Mais Novidades em Breve...</p>
+        </div>
+
+
+
+        <div class="bestiario-grid">
+            
+            <a href="../bestiario/monstros/monstros.html" class="bestiario-card" id="card-monstros" style="text-decoration: none;">
+                <div class="bestiario-img-container">
+                    <img src="../img/icones/monstros.jpg" alt="Monstros" class="bestiario-card-img">
+                </div>
+                <div class="bestiario-card-info">
+                    <h3>Monstros</h3>
+                </div>
+            </a>
+
+            <a href="#" class="bestiario-card locked" id="card-equipamentos-futuro" style="text-decoration: none;" onclick="return false;">
+                <div class="bestiario-img-container">
+                    <div class="bestiario-img-placeholder">❓</div>
+                </div>
+                <div class="bestiario-card-info">
+                    <h3>Em Breve</h3>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+    <script src="bestiario.js"></script>
+</body>
+</html>

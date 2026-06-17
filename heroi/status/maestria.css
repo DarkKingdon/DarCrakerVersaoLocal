@@ -1,0 +1,59 @@
+/* maestria.css */
+.maestria-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.maestria-card {
+    flex: 1;
+    min-width: 280px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #333;
+    padding: 20px;
+    border-radius: 8px;
+    color: #fff;
+    text-align: center;
+}
+
+.maestria-card h3 {
+    border-bottom: 1px solid #00ffff;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.maestria-info {
+    text-align: left;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.txt-bonus {
+    color: #22c55e;
+    font-weight: bold;
+}
+
+/* Barras de progresso da Maestria */
+.progress-container {
+    background: #222;
+    border-radius: 4px;
+    height: 14px;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #444;
+    margin-bottom: 5px;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    transition: width 0.4s ease;
+}
+
+.atk-fill { background: #00a8ff; }
+.def-fill { background: #22c55e; }
+
+.lbl-exp {
+    font-size: 0.85rem;
+    color: #aaa;
+}

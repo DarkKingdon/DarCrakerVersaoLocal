@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarCraker - Mascotes</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="mascotes.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">DarCraker</div>
+        <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
+    </div>
+
+    <nav id="sidebar" class="sidebar">
+        <div class="sidebar-content">
+            <a href="../../inicio/inicio.html" id="btn-home" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../img/icones/inicio.jpg" id="img-home" alt="Início" class="sidebar-img">
+                <span>Início</span>
+            </a>
+            
+            <a href="../heroi.html" id="btn-heroi" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../img/icones/heroi.jpg" id="img-heroi" alt="heroi" class="sidebar-img">
+                <span>Herói</span>
+            </a>
+            
+            <a href="../../mundo/mundo.html" id="btn-mundo" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../img/icones/mundo.jpg" id="img-mundo" alt="mundo" class="sidebar-img">
+                <span>Mundo</span>
+            </a>
+            
+            <a href="../../bestiario/bestiario.html" id="btn-bestiario-poring" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../img/icones/bestiario.jpg" id="img-bestiario" alt="Bestiário" class="sidebar-img">
+                <span>Bestiário</span>
+            </a>
+
+            <a href="../../index.html" id="btn-sair" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../img/icones/sair.jpg" id="img-sair" alt="Sair" class="sidebar-img">
+                <span>Sair</span>
+            </a>
+            
+            <hr class="sidebar-divider">
+            
+            <a href="#" onclick="salvarNoSlotAtual(); return false;" class="sidebar-link btn-nav-save">
+                <span>💾 Salvar no Slot</span>
+            </a>
+            
+            <a href="#" onclick="exportarSaveFisico(); return false;" class="sidebar-link btn-nav-export">
+                <span>📤 Exportar Backup</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="game-container">
+        <div class="heroi-header">
+            <h2>Mascotes</h2>
+
+
+            <!-- Imagem Temática do mascotes adicionada aqui -->
+            <div class="mascotes-container">
+                <img src="../../img/icones/mascotes.jpg" alt="Ícone mascotes" class="mascotes-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="mascotes-icon" style="display: none;">🐉</div>
+            </div>
+
+
+
+            <p>Gerencie seus companheiros de batalha. Ative um mascote para receber auxílio em seus atributos e habilidades na jornada.</p>
+        </div>
+
+        <div class="codex-grid">
+          
+          
+          
+    
+            <a href="toby/toby.html" class="codex-card" id="mascote-toby" style="text-decoration: none;">
+    <div class="codex-img-container">
+        <img src="../../img/mascotes/toby.jpg" alt="Toby" class="codex-card-img">
+        <span class="monster-badge" id="badge-nivel-toby">Nível - 1</span>
+    </div>
+    <div class="codex-card-info">
+        <h3>Toby</h3>
+    </div>
+</a>
+
+            <a href="dante/dante.html" class="codex-card" id="mascote-dante" style="text-decoration: none;">
+    <div class="codex-img-container">
+        <img src="../../img/mascotes/dante.jpg" alt="Dante" class="codex-card-img">
+        <!-- ADICIONADO A BADGE DO DANTE AQUI -->
+        <span class="monster-badge" id="badge-nivel-dante">Nível - 1</span>
+    </div>
+    <div class="codex-card-info">
+        <h3>Dante</h3>
+    </div>
+</a>
+            
+
+        </div>
+    </div>
+
+    <script src="mascotes.js"></script>
+</body>
+</html>

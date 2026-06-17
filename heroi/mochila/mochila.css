@@ -1,0 +1,292 @@
+/* --- Estilos da Mochila (Cyberpunk/Neon Black) --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url('../../img/fundo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #000000;
+    color: #ffffff;
+    padding-top: 80px; /* Alinhado com a navbar fixa */
+    min-height: 100vh;
+}
+
+/* ==========================================
+   ESTILOS DO MENU SIDEBAR INTEGRADO
+   ========================================== */
+
+/* Barra do topo fixa */
+.navbar {
+    width: 100%;
+    box-sizing: border-box; 
+    background: black;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #00a8ff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    font-family: sans-serif;
+}
+
+.logo { 
+    color: #00a8ff; 
+    font-size: 1.5em; 
+    font-weight: bold; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.menu-toggle { 
+    color: white; 
+    cursor: pointer; 
+    font-size: 1.8em; 
+    transition: 0.3s; 
+}
+
+.menu-toggle:hover { 
+    color: #00a8ff; 
+}
+
+/* Menu Lateral (Sidebar) */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Escondido para a direita */
+    width: 250px;
+    height: 100%;
+    background: black;
+    transition: 0.4s;
+    z-index: 999;
+    padding-top: 80px;
+    border-left: 2px solid #00a8ff;
+    font-family: sans-serif;
+}
+
+/* Classe ativada pelo JavaScript */
+.sidebar.active { 
+    right: 0; 
+}
+
+.sidebar-content { 
+    display: flex; 
+    flex-direction: column; 
+    padding: 20px; 
+}
+
+/* Links da Sidebar */
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background: #252525;
+    transition: 0.3s;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.sidebar-link:hover { 
+    background: #333; 
+}
+
+/* Imagens dos Links */
+.sidebar-img { 
+    width: 25px; 
+    height: 25px; 
+    margin-right: 15px; 
+    border-radius: 3px; 
+    object-fit: cover;
+}
+
+.sidebar-divider {
+    border: 0; 
+    border-top: 1px solid #333; 
+    margin: 10px 0;
+}
+
+/* Customização dos botões de Salvar/Exportar */
+.sidebar-link.btn-nav-save { color: #22c55e; }
+.sidebar-link.btn-nav-save:hover { background: rgba(34, 197, 94, 0.1); }
+
+.sidebar-link.btn-nav-export { color: #eab308; }
+.sidebar-link.btn-nav-export:hover { background: rgba(234, 179, 8, 0.1); }
+
+
+/* Container do Inventário */
+.inventory-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.inventory-header {
+    background: rgba(15, 15, 15, 0.9);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #222;
+    margin-bottom: 30px;
+    border-left: 4px solid #a855f7;
+    padding-left: 15px;
+}
+
+.inventory-header h2 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.inventory-header p {
+    color: #888;
+    font-size: 0.95rem;
+    margin-top: 5px;
+}
+
+/* Grid do Inventário */
+/* Procure por esta classe e altere a linha do grid-template-columns */
+.inventory-grid {
+    display: grid;
+    /* Alterado de minmax(90px, 1fr) para 50px */
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr)); 
+    gap: 10px;
+    background: rgba(10, 10, 10, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #1c1c1c;
+    min-height: 200px;
+}
+
+
+/* Slots Individuais */
+/* Substitua a classe .inventory-slot por esta */
+.inventory-slot {
+    width: 60px;        /* Tamanho fixo de largura */
+    height: 60px;       /* Tamanho fixo de altura */
+    background: rgba(20, 20, 20, 0.9);
+    border: 1px solid #333;
+    border-radius: 6px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+
+.inventory-slot:hover {
+    border-color: #a855f7;
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
+    transform: scale(1.05);
+}
+
+/* Estilização da imagem real dentro do slot */
+/* Atualize a classe da imagem do slot */
+.slot-img {
+    width: 85%;         /* Ajustado para preencher bem o espaço de 50px */
+    height: 85%;
+    object-fit: contain;
+    image-rendering: pixelated; 
+    border-radius: 4px;
+}
+
+/* Atualize o tamanho do ícone caso o item não tenha imagem */
+.item-icon {
+    font-size: 1.5rem;  /* Reduzido de 2.2rem para caber em 50px */
+}
+
+/* Ajuste fino na fonte da quantidade para não tapar o item todo */
+.item-qty {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    border: 1px solid #444;
+    font-size: 0.65rem; /* Diminuído levemente para o slot menor */
+    font-weight: bold;
+    padding: 0px 3px;
+    border-radius: 3px;
+    font-family: monospace;
+}
+
+
+/* Modais de detalhes */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #0d0d0d;
+    border: 2px solid #a855f7;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 350px;
+    padding: 25px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px; right: 15px;
+    color: #aaa; font-size: 1.5rem; cursor: pointer;
+}
+
+.close-modal:hover { color: #fff; }
+
+.modal-icon { font-size: 3.5rem; margin-bottom: 10px; }
+
+.item-tag {
+    display: inline-block;
+    background: #333;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 4px;
+    margin: 5px 0 15px 0;
+    font-weight: bold;
+    color: #a855f7;
+    border: 1px solid #555;
+}
+
+.modal-desc {
+    color: #ccc;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.modal-footer {
+    border-top: 1px solid #222;
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.modal-footer strong {
+    color: #fff;
+}

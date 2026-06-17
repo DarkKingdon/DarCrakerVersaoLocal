@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarCraker - Status do Herói</title>
+    
+    <!-- Font Awesome para os ícones da Sidebar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="status.css">
+</head>
+<body>
+
+    <!-- MENU SIDEBAR INDEPENDENTE INTEGRADO -->
+    <div class="navbar">
+        <div class="logo">DarCraker</div>
+        <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
+    </div>
+
+    <nav id="sidebar" class="sidebar">
+        <div class="sidebar-content">
+            <a href="../../inicio/inicio.html" id="btn-home" class="sidebar-link">
+                <img src="../../img/icones/inicio.jpg" id="img-home" alt="Início" class="sidebar-img">
+                <span>Início</span>
+            </a>
+            
+            <a href="../heroi.html" id="btn-heroi" class="sidebar-link">
+                <img src="../../img/icones/heroi.jpg" id="img-heroi" alt="heroi" class="sidebar-img">
+                <span>Herói</span>
+            </a>
+
+            
+            
+            <a href="../../mundo/mundo.html" id="btn-mundo" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../img/icones/mundo.jpg" id="img-mundo" alt="mundo" class="sidebar-img">
+                <span>Mundo</span>
+            </a>
+            
+            <a href="../../bestiario/bestiario.html" id="btn-bestiario-poring" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../img/icones/bestiario.jpg" id="img-bestiario" alt="Bestiário" class="sidebar-img">
+                <span>Bestiário</span>
+            </a>
+
+            <a href="../../index.html" id="btn-sair" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../img/icones/sair.jpg" id="img-sair" alt="Sair" class="sidebar-img">
+                <span>Sair</span>
+            </a>
+            
+            <hr class="sidebar-divider">
+            
+            <a href="#" onclick="salvarNoSlotAtual(); return false;" class="sidebar-link btn-nav-save">
+                <span>💾 Salvar no Slot</span>
+            </a>
+            
+            <a href="#" onclick="exportarSaveFisico(); return false;" class="sidebar-link btn-nav-export">
+                <span>📤 Exportar Backup</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- CONTEÚDO PRINCIPAL DOS STATUS -->
+    <div class="game-container">
+    <div class="char-header">
+        <h2 id="display-nome">Herói</h2>
+        <p>Nível: <span id="display-nivel">1</span></p>
+        <p>EXP: <span id="display-exp-atual">0</span> / <span id="display-exp-max">10</span></p>
+        <p>Pontos Disponíveis: <span id="display-pontos-totais">0</span></p>
+    </div>
+
+    <div class="points-panel" id="panel-pontos" style="display: none;">
+        <p>Você tem <strong id="display-pontos-disponiveis">0</strong> pontos para distribuir!</p>
+    </div>
+
+    <div class="status-grid">
+            <div class="status-box">
+                <h3>Atributos Principais</h3>
+                <ul>
+                    <li>
+                        <span class="attr-label">Vida:</span>
+                        <span class="attr-value"><span id="display-vida-atual">20</span> / <span id="display-vida-max">20</span></span>
+                    </li>
+                    <li>
+                        <span class="attr-label">Mana:</span>
+                        <span class="attr-value"><span id="display-mana-atual">10</span> / <span id="display-mana-max">10</span></span>
+                    </li>
+                    <li>
+                        <span class="attr-label">Força:</span>
+                        <span class="attr-value">
+                            <button class="btn-add" onclick="adicionarAtributo('forca')">+</button>
+                            <span id="display-forca">1</span>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="attr-label">Proteção:</span>
+                        <span class="attr-value">
+                            <button class="btn-add" onclick="adicionarAtributo('protecao')">+</button>
+                            <span id="display-protecao">1</span>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="attr-label">Agilidade:</span>
+                        <span class="attr-value">
+                            <button class="btn-add" onclick="adicionarAtributo('agilidade')">+</button>
+                            <span id="display-agilidade">1</span>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="attr-label">Precisão:</span>
+                        <span class="attr-value">
+                            <button class="btn-add" onclick="adicionarAtributo('precisao')">+</button>
+                            <span id="display-precisao">1</span>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="attr-label">Vitalidade:</span>
+                        <span class="attr-value">
+                            <button class="btn-add" onclick="adicionarAtributo('vitalidade')">+</button>
+                            <span id="display-vitalidade">1</span>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="attr-label">Inteligência:</span>
+                        <span class="attr-value">
+                            <button class="btn-add" onclick="adicionarAtributo('inteligencia')">+</button>
+                            <span id="display-inteligencia">1</span>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="status-box">
+    <h3>Atributos Secundários</h3>
+    <ul>
+        <li>
+            <span class="attr-label">Ataque:</span>
+            <span class="attr-value"><span id="display-ataque-min">1</span> - <span id="display-ataque-max">2</span></span>
+        </li>
+        <li>
+            <span class="attr-label">Defesa:</span>
+            <span class="attr-value"><span id="display-defesa-min">1</span> - <span id="display-defesa-max">2</span></span>
+        </li>
+        <li>
+            <span class="attr-label">Esquiva:</span>
+            <span class="attr-value">
+                <span id="display-esquiva">2</span>
+            </span>
+        </li>
+        <li>
+            <span class="attr-label">Acerto:</span>
+            <span class="attr-value">
+                <span id="display-acerto">2</span>
+            </span>
+        </li>
+    </ul>
+</div>
+
+<div class="status-box">
+                <h3>Atributos Bônus</h3>
+                <ul>
+                    <li>
+                        <span class="attr-label">Bônus em Vida Máxima:</span>
+                        <span class="attr-value" id="bonus-vida-max">0</span>
+                    </li>
+                    <li>
+                        <span class="attr-label">Bônus em Mana Máxima:</span>
+                        <span class="attr-value" id="bonus-mana-max">0</span>
+                    </li>
+                    <li>
+                        <span class="attr-label">Bônus em Força:</span>
+                        <span class="attr-value" id="bonus-forca">0</span>
+                    </li>
+                    <li>
+                        <span class="attr-label">Bônus em Proteção:</span>
+                        <span class="attr-value" id="bonus-protecao">0</span>
+                    </li>
+                    <li>
+                        <span class="attr-label">Bônus em Agilidade:</span>
+                        <span class="attr-value" id="bonus-agilidade">0</span>
+                    </li>
+                    <li>
+                        <span class="attr-label">Bônus em Precisão:</span>
+                        <span class="attr-value" id="bonus-precisao">0</span>
+                    </li>
+                    <li>
+                        <span class="attr-label">Bônus em Vitalidade:</span>
+                        <span class="attr-value" id="bonus-vitalidade">0</span>
+                    </li>
+                    <li>
+                        <span class="attr-label">Bônus em Inteligência:</span>
+                        <span class="attr-value" id="bonus-inteligencia">0</span>
+                    </li>
+                    <li>
+                        <span class="attr-label">Bônus em Ataque Mínimo:</span>
+                        <span class="attr-value" id="bonus-ataque-min">0</span>
+                    </li>
+                    <li>
+                        <span class="attr-label">Bônus em Ataque Máximo:</span>
+                        <span class="attr-value" id="bonus-ataque-max">0</span>
+                    </li>
+                    <li>
+                        <span class="attr-label">Bônus em Defesa Mínima:</span>
+                        <span class="attr-value" id="bonus-defesa-min">0</span>
+                    </li>
+                    <li>
+                        <span class="attr-label">Bônus em Defesa Máxima:</span>
+                        <span class="attr-value" id="bonus-defesa-max">0</span>
+                    </li>
+                    <li>
+                        <span class="attr-label">Bônus em Esquiva:</span>
+                        <span class="attr-value" id="bonus-esquiva">0</span>
+                    </li>
+                    <li>
+                        <span class="attr-label">Bônus em Acerto:</span>
+                        <span class="attr-value" id="bonus-acerto">0</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+</div>
+
+
+<!-- Scripts de Maestria carregados PRIMEIRO para garantir que as funções existam -->
+    <script src="nivel_ataque.js"></script>
+    <script src="nivel_defesa.js"></script>
+    <script src="status.js"></script>
+</body>
+</html>

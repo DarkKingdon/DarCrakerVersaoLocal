@@ -1,0 +1,323 @@
+/* ==========================================
+   CONFIGURAÇÕES GERAIS E FUNDO
+   ========================================== */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body {
+    background-color: #000000;
+    color: #e2e8f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    
+    /* Configuração idêntica ao início/combate */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url('../../../img/fundo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    padding-top: 100px; /* Espaço para não cobrir o conteúdo com a Navbar Fixa */
+    padding-bottom: 20px;
+}
+
+/* ==========================================
+   ESTILOS DO MENU NAVBAR E SIDEBAR (PADRÃO)
+   ========================================== */
+
+/* Barra do topo fixa */
+.navbar {
+    width: 100%;
+    box-sizing: border-box; 
+    background: black;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #00a8ff; /* Azul padrão do DarCraker */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    font-family: sans-serif;
+}
+
+.logo { 
+    color: #00a8ff; 
+    font-size: 1.5em; 
+    font-weight: bold; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.menu-toggle { 
+    color: white; 
+    cursor: pointer; 
+    font-size: 1.8em; 
+    transition: 0.3s; 
+}
+
+.menu-toggle:hover { 
+    color: #00a8ff; 
+}
+
+/* Menu Lateral (Sidebar) voltada para a direita */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px; 
+    width: 250px;
+    height: 100%;
+    background: black;
+    transition: 0.4s;
+    z-index: 999;
+    padding-top: 80px;
+    border-left: 2px solid #00a8ff;
+    font-family: sans-serif;
+}
+
+/* Classe ativada pelo JavaScript */
+.sidebar.active { 
+    right: 0; 
+}
+
+.sidebar-content { 
+    display: flex; 
+    flex-direction: column; 
+    padding: 20px; 
+}
+
+/* Links da Sidebar */
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background: #252525;
+    transition: 0.3s;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.sidebar-link:hover { 
+    background: #333; 
+}
+
+/* Imagens dos Links */
+.sidebar-img { 
+    width: 25px; 
+    height: 25px; 
+    margin-right: 15px; 
+    border-radius: 3px; 
+    object-fit: cover;
+}
+
+.sidebar-divider {
+    border: 0; 
+    border-top: 1px solid #333; 
+    margin: 10px 0;
+}
+
+/* Customização dos botões de Salvar/Exportar */
+.sidebar-link.btn-nav-save { color: #22c55e; }
+.sidebar-link.btn-nav-save:hover { background: rgba(34, 197, 94, 0.1); }
+
+.sidebar-link.btn-nav-export { color: #eab308; }
+.sidebar-link.btn-nav-export:hover { background: rgba(234, 179, 8, 0.1); }
+
+/* ==========================================
+   CONTEÚDO DO BESTIÁRIO (CARD DO MONSTRO)
+   ========================================== */
+.container-bestiario {
+    width: 100%;
+    max-width: 600px;
+    padding: 0 15px;
+}
+
+.bestiario-titulo-interno {
+    text-align: center;
+    color: #00ffff; /* Ciano clássico do bestiário */
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+}
+
+/* Card do Monstro */
+.monster-card {
+    background: rgba(0, 0, 0, 0.8); /* Ajustado para combinar com as caixas de status */
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+}
+
+.monster-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #2e2a47;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.monster-header h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #f8fafc;
+}
+
+.badge-nivel {
+    background: #eab308;
+    color: #000;
+    padding: 4px 10px;
+    font-weight: bold;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* Corpo do Layout */
+.monster-body {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.monster-avatar-box {
+    flex: 1;
+    min-width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1a1926;
+    border-radius: 8px;
+    border: 1px dashed #444;
+    padding: 10px;
+}
+
+.monster-img {
+    max-width: 130px;
+    height: auto;
+    border-radius: 4px;
+    image-rendering: pixelated;
+}
+
+.monster-stats {
+    flex: 1.5;
+    min-width: 200px;
+}
+
+.monster-stats h3, .monster-drops h3 {
+    margin-top: 0;
+    color: #a855f7;
+    font-size: 1.1rem;
+    border-left: 4px solid #a855f7;
+    padding-left: 8px;
+    margin-bottom: 12px;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #222;
+}
+
+.stat-row span {
+    color: #94a3b8;
+}
+
+.stat-row strong {
+    color: #fff;
+}
+
+.txt-exp {
+    color: #eab308 !important;
+}
+
+/* Tabela de Drops */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.table-drops {
+    width: 100%;
+    border-collapse: collapse;
+    background: #141320;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table-drops th, .table-drops td {
+    padding: 12px;
+    text-align: left;
+}
+
+.table-drops th {
+    background: #1e1b4b;
+    color: #c084fc;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.table-drops tr {
+    border-bottom: 1px solid #2e2a47;
+}
+
+.table-drops tr:last-child {
+    border-bottom: none;
+}
+
+.drop-item-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.drop-item-cell span {
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.drop-img-box {
+    width: 32px;
+    height: 32px;
+    background: #1a1926;
+    border: 1px solid #3b375a;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.drop-item-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+/* Responsividade Mobile */
+@media screen and (max-width: 768px) {
+    body {
+        padding-top: 90px;
+    }
+    .monster-body {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarCraker - Maestrias do Herói</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="status.css"> <!-- Reutiliza o estilo de fundo e sidebar -->
+    <link rel="stylesheet" href="maestria.css">
+</head>
+<body>
+
+    <!-- MENU SIDEBAR -->
+    <div class="navbar">
+        <div class="logo">DarCraker</div>
+        <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
+    </div>
+
+    <nav id="sidebar" class="sidebar">
+        <div class="sidebar-content">
+            <a href="../../inicio/inicio.html" id="btn-home" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../img/icones/inicio.jpg" id="img-home" alt="Início" class="sidebar-img">
+                <span>Início</span>
+            </a>
+            
+            <a href="../heroi.html" id="btn-heroi" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../img/icones/heroi.jpg" id="img-heroi" alt="heroi" class="sidebar-img">
+                <span>Herói</span>
+            </a>
+            
+            <a href="../../mundo/mundo.html" id="btn-mundo" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../img/icones/mundo.jpg" id="img-mundo" alt="mundo" class="sidebar-img">
+                <span>Mundo</span>
+            </a>
+            
+            <a href="../../bestiario/bestiario.html" id="btn-bestiario-poring" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../img/icones/bestiario.jpg" id="img-bestiario" alt="Bestiário" class="sidebar-img">
+                <span>Bestiário</span>
+            </a>
+
+            <a href="../../index.html" id="btn-sair" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../img/icones/sair.jpg" id="img-sair" alt="Sair" class="sidebar-img">
+                <span>Sair</span>
+            </a>
+            
+            <hr class="sidebar-divider">
+            
+            <a href="#" onclick="salvarNoSlotAtual(); return false;" class="sidebar-link btn-nav-save">
+                <span>💾 Salvar no Slot</span>
+            </a>
+            
+            <a href="#" onclick="exportarSaveFisico(); return false;" class="sidebar-link btn-nav-export">
+                <span>📤 Exportar Backup</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- CONTEÚDO DAS MAESTRIAS -->
+    <div class="game-container">
+        <div class="char-header">
+            <h2>Maestrias de Combate</h2>
+            <p>Evolua suas habilidades lutando contra os monstros!</p>
+        </div>
+
+        <div class="maestria-grid">
+            <!-- Card de Ataque -->
+            <div class="maestria-card">
+                <h3>⚔️ Maestria de Ataque</h3>
+                <div class="maestria-info">
+                    <p>Nível Atual: <strong id="lbl-nv-ataque">1</strong></p>
+                    <p>Bônus Máximo: <span id="lbl-bonus-atk-max" class="txt-bonus">+0</span></p>
+                    <p>Bônus Mínimo: <span id="lbl-bonus-atk-min" class="txt-bonus">+0</span></p>
+                </div>
+                <div class="progress-container">
+                    <div id="bar-exp-ataque" class="progress-fill atk-fill"></div>
+                </div>
+                <p class="lbl-exp"><span id="lbl-exp-atk-atual">0</span> / <span id="lbl-exp-atk-max">10</span> EXP</p>
+            </div>
+
+            <!-- Card de Defesa -->
+            <div class="maestria-card">
+                <h3>🛡️ Maestria de Defesa</h3>
+                <div class="maestria-info">
+                    <p>Nível Atual: <strong id="lbl-nv-defesa">1</strong></p>
+                    <p>Bônus Máximo: <span id="lbl-bonus-def-max" class="txt-bonus">+0</span></p>
+                    <p>Bônus Mínimo: <span id="lbl-bonus-def-min" class="txt-bonus">+0</span></p>
+                </div>
+                <div class="progress-container">
+                    <div id="bar-exp-defesa" class="progress-fill def-fill"></div>
+                </div>
+                <p class="lbl-exp"><span id="lbl-exp-def-atual">0</span> / <span id="lbl-exp-def-max">10</span> EXP</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="status.js"></script> <!-- Reutiliza funções de sidebar e save -->
+    <script src="nivel_ataque.js"></script>
+    <script src="nivel_defesa.js"></script>
+    <script src="maestria.js"></script>
+</body>
+</html>

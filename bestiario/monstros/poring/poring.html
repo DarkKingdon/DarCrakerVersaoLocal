@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestiário - Poring</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="poring.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">DarCraker</div>
+        <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
+    </div>
+
+    <nav id="sidebar" class="sidebar">
+        <div class="sidebar-content">
+            <a href="../../../inicio/inicio.html" id="btn-home" class="sidebar-link">
+                <img src="../../../img/icones/inicio.jpg" id="img-home" alt="Início" class="sidebar-img">
+                <span>Início</span>
+            </a>
+            
+            <a href="../../../heroi/status/status.html" id="btn-heroi" class="sidebar-link">
+                <img src="../../../img/icones/heroi.jpg" id="img-heroi" alt="Herói" class="sidebar-img">
+                <span>Herói</span>
+            </a>
+
+            
+            
+            <a href="../../../mundo/mundo.html" id="btn-mundo" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../../img/icones/mundo.jpg" id="img-mundo" alt="mundo" class="sidebar-img">
+                <span>Mundo</span>
+            </a>
+            
+            <a href="../../bestiario.html" id="btn-bestiario-poring" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../../img/icones/bestiario.jpg" id="img-bestiario" alt="Bestiário" class="sidebar-img">
+                <span>Bestiário</span>
+            </a>
+
+            <a href="../../../index.html" id="btn-sair" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../../img/icones/sair.jpg" id="img-sair" alt="Sair" class="sidebar-img">
+                <span>Sair</span>
+            </a>
+            
+            <hr class="sidebar-divider">
+            
+            <a href="#" onclick="salvarNoSlotAtual(); return false;" class="sidebar-link btn-nav-save">
+                <span>💾 Salvar no Slot</span>
+            </a>
+            
+            <a href="#" onclick="exportarSaveFisico(); return false;" class="sidebar-link btn-nav-export">
+                <span>📤 Exportar Backup</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container-bestiario">
+        <main class="monster-card">
+            
+            <h1 class="bestiario-titulo-interno">Bestiário</h1>
+
+            <div class="monster-header">
+                <h2 id="monster-nome">Carregando...</h2>
+                <span class="badge-nivel">Nível: <span id="monster-nivel">-</span></span>
+            </div>
+
+            <div class="monster-body">
+                <div class="monster-avatar-box">
+                    <img id="monster-img" src="" alt="Imagem do Monstro" class="monster-img">
+                </div>
+
+                <div class="monster-stats">
+                    <h3>📊 Atributos Básicos</h3>
+                    <div class="stat-row"><span>Vida Máxima:</span> <strong id="stat-hp">-</strong></div>
+                    <div class="stat-row"><span>Ataque:</span> <strong id="stat-atk">-</strong></div>
+                    <div class="stat-row"><span>Defesa:</span> <strong id="stat-def">-</strong></div>
+                    <div class="stat-row"><span>EXP Recompensa:</span> <strong id="stat-exp" class="txt-exp">-</strong></div>
+                </div>
+            </div>
+
+            <section class="monster-drops">
+                <h3>📦 Tabela de Drops</h3>
+                <div class="table-responsive">
+                    <table class="table-drops">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Quantidade</th>
+                                <th>Chance</th>
+                            </tr>
+                        </thead>
+                        <tbody id="lista-drops">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="poring.js"></script>
+</body>
+</html>

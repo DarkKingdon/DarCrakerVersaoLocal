@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarCraker - Cidade</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="cidade.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">DarCraker</div>
+        <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
+    </div>
+
+    <nav id="sidebar" class="sidebar">
+        <div class="sidebar-content">
+            <a href="../../inicio/inicio.html" id="btn-home" class="sidebar-link">
+                <img src="../../img/icones/inicio.jpg" id="img-home" alt="Início" class="sidebar-img">
+                <span>Início</span>
+            </a>
+            
+            <a href="../../heroi/heroi.html" id="btn-heroi" class="sidebar-link">
+                <img src="../../img/icones/heroi.jpg" id="img-heroi" alt="heroi" class="sidebar-img">
+                <span>Herói</span>
+            </a>
+
+            <a href="../../mundo/mundo.html" id="btn-mundo" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../img/icones/mundo.jpg" id="img-mundo" alt="mundo" class="sidebar-img">
+                <span>Mundo</span>
+            </a>
+            
+            
+            
+            <a href="../../bestiario/bestiario.html" id="btn-bestiario-poring" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../img/icones/bestiario.jpg" id="img-bestiario" alt="Bestiário" class="sidebar-img">
+                <span>Bestiário</span>
+            </a>
+
+            <a href="../../index.html" id="btn-sair" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../img/icones/sair.jpg" id="img-sair" alt="Sair" class="sidebar-img">
+                <span>Sair</span>
+            </a>
+            
+            <hr class="sidebar-divider">
+            
+            <a href="#" onclick="salvarNoSlotAtual(); return false;" class="sidebar-link btn-nav-save">
+                <span>💾 Salvar no Slot</span>
+            </a>
+            
+            <a href="#" onclick="exportarSaveFisico(); return false;" class="sidebar-link btn-nav-export">
+                <span>📤 Exportar Backup</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="game-container">
+        <div class="cidade-header">
+            <h2 id="nome-cidade">Cidade Local</h2>
+
+            <!-- Imagem Temática do cidade adicionada aqui -->
+            <div class="cidade-container">
+                <img src="../../img/icones/cidade.jpg" alt="Ícone cidade" class="cidade-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="cidade-icon" style="display: none;">🐉</div>
+            </div>
+
+
+
+            <p id="descricao-cidade">Um local seguro para descansar, negociar seus itens coletados e se preparar para os perigos que aguardam fora dos muros.</p>
+        </div>
+
+        <div class="cidade-grid">
+            
+            <a href="comprador/comprador.html" class="cidade-card" id="card-comprador" style="text-decoration: none;">
+                <div class="cidade-img-container">
+                    <img src="../../img/icones/comprador.jpg" alt="Comprador" class="cidade-card-img">
+                </div>
+                <div class="cidade-card-info">
+                    <h3>Comprador</h3>
+                </div>
+            </a>
+
+            <a href="#" class="cidade-card" id="card-quadro_de_missoes" style="text-decoration: none;">
+                <div class="cidade-img-container">
+                    <img src="../../img/icones/quadro_de_missoes.jpg" alt="Quadro de missoes" class="cidade-card-img">
+                </div>
+                <div class="cidade-card-info">
+                    <h3>Quadro de Missões</h3>
+                </div>
+            </a>
+
+            <a href="vendedor/vendedor.html" class="cidade-card" id="card-vendedor" style="text-decoration: none;">
+                <div class="cidade-img-container">
+                    <img src="../../img/icones/vendedor.jpg" alt="Vendedor" class="cidade-card-img">
+                </div>
+                <div class="cidade-card-info">
+                    <h3>Vendedor</h3>
+                </div>
+            </a>
+
+            
+
+        </div>
+    </div>
+
+    <script src="cidade.js"></script>
+</body>
+</html>

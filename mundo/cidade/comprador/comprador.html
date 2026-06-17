@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarCraker - Comprador de Drops</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="comprador.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">DarCraker</div>
+        
+        <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
+    </div>
+
+    <nav id="sidebar" class="sidebar">
+        <div class="sidebar-content">
+            <a href="../../../inicio/inicio.html" id="btn-home" class="sidebar-link">
+                <img src="../../../img/icones/inicio.jpg" id="img-home" alt="Início" class="sidebar-img">
+                <span>Início</span>
+            </a>
+            
+            <a href="../../../heroi/heroi.html" id="btn-heroi" class="sidebar-link">
+                <img src="../../../img/icones/heroi.jpg" id="img-heroi" alt="heroi" class="sidebar-img">
+                <span>Herói</span>
+            </a>
+
+            <a href="../../../mundo/mundo.html" id="btn-mundo" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../../img/icones/mundo.jpg" id="img-mundo" alt="mundo" class="sidebar-img">
+                <span>Mundo</span>
+            </a>
+            
+            
+            
+            <a href="../../../bestiario/bestiario.html" id="btn-bestiario-poring" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../../img/icones/bestiario.jpg" id="img-bestiario" alt="Bestiário" class="sidebar-img">
+                <span>Bestiário</span>
+            </a>
+
+            <a href="../../../index.html" id="btn-sair" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../../img/icones/sair.jpg" id="img-sair" alt="Sair" class="sidebar-img">
+                <span>Sair</span>
+            </a>
+            
+            <hr class="sidebar-divider">
+            
+            <a href="#" onclick="salvarNoSlotAtual(); return false;" class="sidebar-link btn-nav-save">
+                <span>💾 Salvar no Slot</span>
+            </a>
+            
+            <a href="#" onclick="exportarSaveFisico(); return false;" class="sidebar-link btn-nav-export">
+                <span>📤 Exportar Backup</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="game-container">
+        <div class="comprador-header">
+            <h2>Comprador de Drops</h2>
+            <p>Negocie os materiais e suprimentos que você coletou em suas jornadas. O comprador paga o preço justo em Moedas de Ouro pelos seus espólios de batalha!</p>
+        </div>
+
+        <div class="vitrine-comprador">
+    <!-- Novo container para agrupar e centralizar o título e o saldo -->
+    <div class="vitrine-header-container">
+        <div class="vitrine-titulo">🎒 Seus Drops Disponíveis para Venda</div>
+        
+        <div class="ouro-display">
+            <!-- Trocado o emoji 🪙 por uma tag img configurada -->
+            <span class="ouro-icone">
+                <img src="../../../img/objeto_comun/moedas_de_ouro.jpg" alt="Ouro" class="moeda-img">
+            </span> 
+            <span id="saldo-ouro">0</span>
+        </div>
+    </div>
+    
+    <div class="comprador-grid" id="grid-vendas">
+    </div>
+
+    <div id="mensagem-vazia" class="mensagem-vazia" style="display: none;">
+        Sua mochila não possui drops ou equipamentos valiosos para vender no momento. Vá caçar!
+    </div>
+</div>
+
+    </div>
+
+    <script src="valor_comprador.js"></script>
+    <script src="comprador.js"></script>
+</body>
+</html>

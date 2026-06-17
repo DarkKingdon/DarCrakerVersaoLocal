@@ -1,0 +1,453 @@
+/* --- Estilos do Códex do Dante (Cyberpunk/Neon Black) --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url('../../../img/fundo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #000000;
+    color: #ffffff;
+    padding-top: 80px;
+    min-height: 100vh;
+}
+
+/* ==========================================
+   ESTILOS DO MENU SIDEBAR INTEGRADO
+   ========================================== */
+.navbar {
+    width: 100%;
+    box-sizing: border-box; 
+    background: black;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #00a8ff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    font-family: sans-serif;
+}
+
+.logo { 
+    color: #00a8ff; 
+    font-size: 1.5em; 
+    font-weight: bold; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.menu-toggle { 
+    color: white; 
+    cursor: pointer; 
+    font-size: 1.8em; 
+    transition: 0.3s; 
+}
+
+.menu-toggle:hover { 
+    color: #00a8ff; 
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background: black;
+    transition: 0.4s;
+    z-index: 999;
+    padding-top: 80px;
+    border-left: 2px solid #00a8ff;
+    font-family: sans-serif;
+}
+
+.sidebar.active { 
+    right: 0; 
+}
+
+.sidebar-content { 
+    display: flex; 
+    flex-direction: column; 
+    padding: 20px; 
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background: #252525;
+    transition: 0.3s;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.sidebar-link:hover { 
+    background: #333; 
+}
+
+.sidebar-img { 
+    width: 25px; 
+    height: 25px; 
+    margin-right: 15px; 
+    border-radius: 3px; 
+    object-fit: cover;
+}
+
+.sidebar-divider {
+    border: 0; 
+    border-top: 1px solid #333; 
+    margin: 10px 0;
+}
+
+.sidebar-link.btn-nav-save { color: #22c55e; }
+.sidebar-link.btn-nav-save:hover { background: rgba(34, 197, 94, 0.1); }
+
+.sidebar-link.btn-nav-export { color: #eab308; }
+.sidebar-link.btn-nav-export:hover { background: rgba(234, 179, 8, 0.1); }
+
+
+/* CONTAINER DO CÓDEX */
+.codex-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.codex-header {
+    background: rgba(15, 15, 15, 0.9);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #222;
+    margin-bottom: 25px;
+    border-left: 4px solid #ffaa00;
+    text-align: center;
+}
+
+/* CONTAINER DA IMAGEM DO DANTE NO CABEÇALHO */
+.mascote-container {
+    margin: 15px auto; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mascote-img {
+    width: 120px;       
+    height: 120px;
+    object-fit: contain;
+    image-rendering: pixelated; 
+    filter: drop-shadow(0 0 8px rgba(255, 170, 0, 0.4));
+}
+
+.mascote-icon {
+    font-size: 3.5rem;
+    margin: 10px 0;
+}
+
+.codex-header h2 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffaa00;
+}
+
+.codex-header p {
+    color: #888;
+    font-size: 0.95rem;
+    margin-top: 5px;
+}
+
+/* CARD CENTRAL */
+.codex-card {
+    background: rgba(10, 10, 10, 0.85);
+    border: 1px solid #1c1c1c;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255, 170, 0, 0.1);
+}
+
+.codex-level {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* SLOT VISUAL DO ITEM */
+.codex-slot-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.codex-slot {
+    width: 80px;
+    height: 80px;
+    background: rgba(20, 20, 20, 0.9);
+    border: 2px solid #ffaa00;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(255, 170, 0, 0.2);
+}
+
+.codex-img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+.item-icon {
+    font-size: 2.5rem;
+}
+
+.codex-progress {
+    font-family: monospace;
+    font-size: 1.1rem;
+    color: #fff;
+    background: #111;
+    padding: 4px 15px;
+    border-radius: 4px;
+    border: 1px solid #333;
+}
+
+/* CAIXA DE RECOMPENSAS */
+.codex-reward-box {
+    background: rgba(255, 170, 0, 0.05);
+    border: 1px dashed #ffaa00;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 25px;
+}
+
+.codex-reward-box h4 {
+    color: #ffaa00;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+.codex-reward-box p {
+    font-size: 1.05rem;
+    font-weight: bold;
+}
+
+/* CONTROLES E BOTÕES */
+.mochila-count {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.mochila-count strong {
+    color: #fff;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn-codex {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.btn-entregar {
+    background: #252525;
+    color: #fff;
+    border: 1px solid #444;
+}
+
+.btn-entregar:hover {
+    background: #333;
+    border-color: #666;
+}
+
+.btn-entregar-tudo {
+    background: #22c55e;
+    color: black;
+}
+
+.btn-entregar-tudo:hover {
+    background: #16a34a;
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.4);
+}
+
+/* SUCESSO COMPLETO */
+.codex-completed h3 {
+    color: #eab308;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.codex-completed p {
+    color: #888;
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+   GUIA DE STATUS POR NÍVEL (DANTE)
+   ========================================== */
+.dante-stats-guia {
+    margin-top: 25px;
+    background: rgba(20, 20, 20, 0.6);
+    border: 1px solid #222;
+    border-radius: 6px;
+    padding: 15px;
+    text-align: left;
+}
+
+.dante-stats-guia h4 {
+    color: #ffaa00;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    border-bottom: 1px solid #ffaa0033;
+    padding-bottom: 6px;
+}
+
+.lista-niveis {
+    max-height: 180px; 
+    overflow-y: auto;  
+    padding-right: 5px;
+}
+
+.linha-nivel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    padding: 6px 4px;
+    border-bottom: 1px solid #151515;
+    font-family: monospace;
+}
+
+.linha-nivel:last-child {
+    border-bottom: none;
+}
+
+.linha-nivel span {
+    color: #888;
+}
+
+.linha-nivel strong {
+    color: #fff;
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+.linha-nivel small {
+    color: #ffaa0099;
+}
+
+.lista-niveis::-webkit-scrollbar {
+    width: 4px;
+}
+
+.lista-niveis::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.lista-niveis::-webkit-scrollbar-thumb {
+    background: #ffaa00;
+    border-radius: 2px;
+}
+
+/* ==========================================
+   RESPONSIVIDADE (MOBILE)
+   ========================================== */
+@media screen and (max-width: 768px) {
+    body {
+        padding-top: 70px; 
+    }
+
+    .codex-container {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+
+    .codex-header {
+        padding: 15px;
+        border-left-width: 3px;
+    }
+
+    .codex-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .mascote-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .codex-card {
+        padding: 20px 15px;
+    }
+
+    .codex-level {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+
+    .codex-slot {
+        width: 70px;
+        height: 70px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .btn-codex {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    .dante-stats-guia {
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+    .linha-nivel {
+        font-size: 0.8rem;
+        padding: 8px 2px; 
+    }
+
+    .linha-nivel strong {
+        margin-left: 6px;
+    }
+}

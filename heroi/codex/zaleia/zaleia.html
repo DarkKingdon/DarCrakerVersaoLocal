@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarCraker - Códex Zaleia</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="zaleia.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">DarCraker</div>
+        <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
+    </div>
+
+    <nav id="sidebar" class="sidebar">
+        <div class="sidebar-content">
+            <a href="../../../inicio/inicio.html" id="btn-home" class="sidebar-link">
+                <img src="../../../img/icones/inicio.jpg" id="img-home" alt="Início" class="sidebar-img">
+                <span>Inicio</span>
+            </a>
+            
+            <a href="../../../heroi/heroi.html" id="btn-heroi" class="sidebar-link">
+                <img src="../../../img/icones/heroi.jpg" id="img-heroi" alt="heroi" class="sidebar-img">
+                <span>Herói</span>
+            </a>
+
+            <a href="../../../mundo/mundo.html" id="btn-mundo" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../../img/icones/mundo.jpg" id="img-mundo" alt="mundo" class="sidebar-img">
+                <span>Mundo</span>
+            </a>
+            
+            <a href="../../../bestiario/bestiario.html" id="btn-bestiario-poring" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../../img/icones/bestiario.jpg" id="img-bestiario" alt="Bestiário" class="sidebar-img">
+                <span>Bestiário</span>
+            </a>
+
+            <a href="../../../index.html" id="btn-sair" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../../img/icones/sair.jpg" id="img-sair" alt="Sair" class="sidebar-img">
+                <span>Sair</span>
+            </a>
+            
+            <hr class="sidebar-divider">
+            
+            <a href="#" onclick="salvarNoSlotAtual(); return false;" class="sidebar-link btn-nav-save">
+                <span>💾 Salvar no Slot</span>
+            </a>
+            
+            <a href="#" onclick="exportarSaveFisico(); return false;" class="sidebar-link btn-nav-export">
+                <span>📤 Exportar Backup</span>
+            </a>
+        </div>
+    </nav>
+
+        <div class="codex-container">
+        <div class="codex-header">
+            <h2>Zaleia</h2>
+            <p>Sacrifique suas Zaleias para liberar bônus permanentes para os atributos do seu herói.</p>
+        </div>
+
+        <div class="codex-card">
+            <div class="codex-level">
+                Nível do Códex: <span id="codex-nivel">0</span> / 14
+            </div>
+
+            <div class="codex-slot-container">
+                <div class="codex-slot">
+                    <img src="../../../img/objeto_comun/zaleia.jpg" alt="Zaleia" class="codex-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="item-icon" style="display: none;">🌿</div>
+                </div>
+                <div class="codex-progress">
+                    Progresso: <span id="progresso-atual">0</span> / <span id="progresso-requerido">10</span>
+                </div>
+            </div>
+
+            <div class="codex-reward-box">
+                <h4>Próxima Recompensa:</h4>
+                <p id="codex-recompensa-desc">Carregando informações...</p>
+            </div>
+
+            <div class="codex-actions" id="container-acoes">
+                <p class="mochila-count">Você possui: <strong id="qtd-mochila">0</strong> Zaleias na mochila.</p>
+                <div class="button-group">
+                    <button class="btn-codex btn-entregar" onclick="entregarZaleia(1)">Entregar 1</button>
+                    <button class="btn-codex btn-entregar-tudo" onclick="entregarTudo()">Entregar Tudo Necessário</button>
+                </div>
+            </div>
+
+            <!-- NOVO CONTAINER INFORMATIVO DE STATUS POR NÍVEL -->
+            <div class="codex-stats-guia">
+                <h4>📋 Guia de Atributos do Códex</h4>
+                <div class="lista-niveis">
+                    <div class="linha-nivel"><span>Nível 1:</span> <strong>+5 Vida Máxima</strong> <small>(10)</small></div>
+                    <div class="linha-nivel"><span>Nível 2:</span> <strong>+5 Mana Máxima</strong> <small>(20)</small></div>
+                    <div class="linha-nivel"><span>Nível 3:</span> <strong>+1 Esquiva</strong> <small>(30)</small></div>
+                    <div class="linha-nivel"><span>Nível 4:</span> <strong>+1 Acerto</strong> <small>(40)</small></div>
+                    <div class="linha-nivel"><span>Nível 5:</span> <strong>+1 Defesa Máxima</strong> <small>(50)</small></div>
+                    <div class="linha-nivel"><span>Nível 6:</span> <strong>+1 Ataque Máximo</strong> <small>(60)</small></div>
+                    <div class="linha-nivel"><span>Nível 7:</span> <strong>+1 Inteligência</strong> <small>(70)</small></div>
+                    <div class="linha-nivel"><span>Nível 8:</span> <strong>+1 Precisão</strong> <small>(80)</small></div>
+                    <div class="linha-nivel"><span>Nível 9:</span> <strong>+1 Vitalidade</strong> <small>(90)</small></div>
+                    <div class="linha-nivel"><span>Nível 10:</span> <strong>+1 Agilidade</strong> <small>(100)</small></div>
+                    <div class="linha-nivel"><span>Nível 11:</span> <strong>+1 Defesa Mínima</strong> <small>(110)</small></div>
+                    <div class="linha-nivel"><span>Nível 12:</span> <strong>+1 Ataque Mínimo</strong> <small>(120)</small></div>
+                    <div class="linha-nivel"><span>Nível 13:</span> <strong>+1 Proteção</strong> <small>(130)</small></div>
+                    <div class="linha-nivel"><span>Nível 14:</span> <strong>+1 Força</strong> <small>(140)</small></div>
+                </div>
+            </div>
+
+            <div class="codex-completed" id="msg-concluido" style="display: none;">
+                <h3>✨ Códex Totalmente Maximizado! ✨</h3>
+                <p>Todos os bônus permanentes de Zaleia foram aplicados ao seu herói.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="zaleia.js"></script>
+</body>
+</html>

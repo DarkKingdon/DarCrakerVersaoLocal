@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarCraker - Pagina Inicio</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="inicio.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">DarCraker</div>
+        <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
+    </div>
+
+    <nav id="sidebar" class="sidebar">
+        <div class="sidebar-content">
+            
+
+
+
+            
+            <a href="../heroi/heroi.html" id="btn-heroi" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../img/icones/heroi.jpg" id="img-heroi" alt="heroi" class="sidebar-img">
+                <span>Herói</span>
+            </a>
+
+            <a href="../mundo/mundo.html" id="btn-mundo" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../img/icones/mundo.jpg" id="img-mundo" alt="mundo" class="sidebar-img">
+                <span>Mundo</span>
+            </a>
+            
+            <a href="../bestiario/bestiario.html" id="btn-bestiario-poring" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../img/icones/bestiario.jpg" id="img-bestiario" alt="Bestiário" class="sidebar-img">
+                <span>Bestiário</span>
+            </a>
+
+            <a href="../index.html" id="btn-sair" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../img/icones/sair.jpg" id="img-sair" alt="Sair" class="sidebar-img">
+                <span>Sair</span>
+            </a>
+            
+            <hr class="sidebar-divider">
+            
+            <a href="#" onclick="salvarNoSlotAtual(); return false;" class="sidebar-link btn-nav-save">
+                <span>💾 Salvar no Slot</span>
+            </a>
+            
+            <a href="#" onclick="exportarSaveFisico(); return false;" class="sidebar-link btn-nav-export">
+                <span>📤 Exportar Backup</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="game-container">
+        <div class="inicio-grid">
+            <div class="inicio-box">
+                <h3>Novidades</h3>
+                <ul>
+                    <li>Mudanças - v.0.0.11</li>
+                    <li>15. Criado o ( Sistema do Vendedor ) Na parte da Cidade em Mundo.</li>
+                    <li>14. Criado o ( Sistema do Comprador ) Na parte da Cidade em Mundo.</li>
+                    <li>13. Criado o ( Mascote Dante ).</li>
+                    <li>13. Criado o ( Mascote Toby ).</li>
+                    <li>12. Criado o ( Sistema de  Mascotes ) na Parte do Herói.</li>
+                    <li>11. Criado o ( Menu Mundo ) e ajustados os seus caminhos.</li>
+                    <li>10. Criado o ( Codex do item - Luvas Simples ) com 14 Níveis.</li>
+                    <li>9. Criado o ( Codex do item - Zaleia ) com 14 Níveis.</li>
+                    <li>8. Criado o ( Codex do item - Moedas de Ouro ) com 14 Níveis.</li>
+                    <li>7. Criado o ( Codex do item - Maçã ) com 14 Níveis.</li>
+                    <li>6. Criado o ( Codex do item - Jellopy ) com 14 Níveis.</li>
+                    <li>5. Adicionado o ( Novo Item - Luvas Simples ) para Dropar do Monstro Poring com 4% de Chance.</li>
+                    <li>4. Criado o ( Primeiro Item de Equipamento - Luvas Simples ) ( Bonus de +5 de Vida Maxima ) ( Requisito Jogador Ser Nivel. 2 ) - Equipavel no Slot para as Mãos.</li>
+                    <li>3. Criado o ( Sistema de Equipamentos do Jogador ) na Parte do Herói.</li>
+                    <li>2. Atualizado os ( Caminhos dos Menus ).</li>
+                    <li>1. Criado o ( Sistema Codex ) na Parte do Herói.</li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="inicio.js"></script>
+</body>
+</html>

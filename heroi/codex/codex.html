@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarCraker - Codex</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Utiliza o CSS próprio unificado -->
+    <link rel="stylesheet" href="codex.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">DarCraker</div>
+        <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
+    </div>
+
+    <nav id="sidebar" class="sidebar">
+        <div class="sidebar-content">
+            <a href="../../inicio/inicio.html" id="btn-home" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../img/icones/inicio.jpg" id="img-home" alt="Início" class="sidebar-img">
+                <span>Início</span>
+            </a>
+            
+            <a href="../heroi.html" id="btn-heroi" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../img/icones/heroi.jpg" id="img-heroi" alt="heroi" class="sidebar-img">
+                <span>Herói</span>
+            </a>
+            
+            <a href="../../mundo/mundo.html" id="btn-mundo" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../img/icones/mundo.jpg" id="img-mundo" alt="mundo" class="sidebar-img">
+                <span>Mundo</span>
+            </a>
+            
+            <a href="../../bestiario/bestiario.html" id="btn-bestiario-poring" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../img/icones/bestiario.jpg" id="img-bestiario" alt="Bestiário" class="sidebar-img">
+                <span>Bestiário</span>
+            </a>
+
+            <a href="../../index.html" id="btn-sair" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../img/icones/sair.jpg" id="img-sair" alt="Sair" class="sidebar-img">
+                <span>Sair</span>
+            </a>
+            
+            <hr class="sidebar-divider">
+            
+            <a href="#" onclick="salvarNoSlotAtual(); return false;" class="sidebar-link btn-nav-save">
+                <span>💾 Salvar no Slot</span>
+            </a>
+            
+            <a href="#" onclick="exportarSaveFisico(); return false;" class="sidebar-link btn-nav-export">
+                <span>📤 Exportar Backup</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="game-container">
+        <div class="heroi-header">
+            <h2>Codex de Descobertas</h2>
+
+            <!-- Imagem Temática do codex adicionada aqui -->
+            <div class="codex-container">
+                <img src="../../img/icones/codex.jpg" alt="Ícone codex" class="codex-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="codex-icon" style="display: none;">🐉</div>
+            </div>
+
+
+            <p>Monitore os itens coletados em sua jornada. Complete o Codex de cada item para liberar bônus permanentes para o seu herói.</p>
+        </div>
+
+        <div class="codex-grid">
+    
+    <a href="jellopy/jellopy.html" class="codex-card" id="codex-jellopy" style="text-decoration: none;">
+        <div class="codex-img-container">
+            <img src="../../img/objeto_comun/jellopy.jpg" alt="Jellopy" class="codex-card-img">
+            <!-- Adicionado Badge Jellopy -->
+            <span class="monster-badge" id="badge-codex-jellopy">Nível. 0</span>
+        </div>
+        <div class="codex-card-info">
+            <h3>Jellopy</h3>
+        </div>
+    </a>
+
+    <a href="luvas_simples/luvas_simples.html" class="codex-card" id="codex-luvas_simples" style="text-decoration: none;">
+        <div class="codex-img-container">
+            <img src="../../img/equipamentos/luvas_simples.jpg" alt="Luvas Simples" class="codex-card-img">
+            <!-- Adicionado Badge Luvas Simples -->
+            <span class="monster-badge" id="badge-codex-luvas_simples">Nível. 0</span>
+        </div>
+        <div class="codex-card-info">
+            <h3>Luvas Simples</h3>
+        </div>
+    </a>
+
+    <a href="maca/maca.html" class="codex-card" id="codex-maca" style="text-decoration: none;">
+        <div class="codex-img-container">
+            <img src="../../img/objeto_consumivel/maca.jpg" alt="Maçã" class="codex-card-img">
+            <!-- Adicionado Badge Maçã -->
+            <span class="monster-badge" id="badge-codex-maca">Nível. 0</span>
+        </div>
+        <div class="codex-card-info">
+            <h3>Maçã</h3>
+        </div>
+    </a>
+
+    <a href="moedas_de_ouro/moedas_de_ouro.html" class="codex-card" id="codex-moedas_de_ouro" style="text-decoration: none;">
+        <div class="codex-img-container">
+            <img src="../../img/objeto_comun/moedas_de_ouro.jpg" alt="Moedas de Ouro" class="codex-card-img">
+            <!-- Adicionado Badge Moedas de Ouro -->
+            <span class="monster-badge" id="badge-codex-moedas_de_ouro">Nível. 0</span>
+        </div>
+        <div class="codex-card-info">
+            <h3>Moedas de Ouro</h3>
+        </div>
+    </a>
+    
+    <a href="racao_tipo_1/racao_tipo_1.html" class="codex-card" id="codex-racao_tipo_1" style="text-decoration: none;">
+        <div class="codex-img-container">
+            <img src="../../img/objeto_comun/racao_tipo_1.jpg" alt="racao_tipo_1" class="codex-card-img">
+            <!-- Adicionado Badge Ração Tipo 1 -->
+            <span class="monster-badge" id="badge-codex-racao_tipo_1">Nível. 0</span>
+        </div>
+        <div class="codex-card-info">
+            <h3>Ração Tipo 1</h3>
+        </div>
+    </a>
+
+    <a href="zaleia/zaleia.html" class="codex-card" id="codex-zaleia" style="text-decoration: none;">
+        <div class="codex-img-container">
+            <img src="../../img/objeto_comun/zaleia.jpg" alt="Zaleia" class="codex-card-img">
+            <!-- Adicionado Badge Zaleia -->
+            <span class="monster-badge" id="badge-codex-zaleia">Nível. 0</span>
+        </div>
+        <div class="codex-card-info">
+            <h3>Zaleia</h3>
+        </div>
+    </a>
+
+</div>
+
+
+
+    </div>
+
+    <script src="codex.js"></script>
+</body>
+</html>

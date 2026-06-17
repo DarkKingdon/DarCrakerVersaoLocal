@@ -1,0 +1,225 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    
+    margin: 0;
+    padding: 0;
+    
+    /* Configuração da Imagem de Fundo (Igual ao inicio.css, ajustando o caminho do diretório) */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url('../../img/fundo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Mantém o fundo fixo ao rolar */
+}
+
+/* Barra do topo fixa */
+.navbar {
+    width: 100%;
+    box-sizing: border-box; 
+    background: black;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #00a8ff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    font-family: sans-serif;
+}
+
+.logo { 
+    color: #00a8ff; 
+    font-size: 1.5em; 
+    font-weight: bold; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.menu-toggle { 
+    color: white; 
+    cursor: pointer; 
+    font-size: 1.8em; 
+    transition: 0.3s; 
+}
+
+.menu-toggle:hover { 
+    color: #00a8ff; 
+}
+
+/* Menu Lateral (Sidebar) */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Escondido para a direita */
+    width: 250px;
+    height: 100%;
+    background: black;
+    transition: 0.4s;
+    z-index: 999;
+    padding-top: 80px;
+    border-left: 2px solid #00a8ff;
+    font-family: sans-serif;
+}
+
+/* Classe ativada pelo JavaScript */
+.sidebar.active { 
+    right: 0; 
+}
+
+.sidebar-content { 
+    display: flex; 
+    flex-direction: column; 
+    padding: 20px; 
+}
+
+/* Links da Sidebar */
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background: #252525;
+    transition: 0.3s;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.sidebar-link:hover { 
+    background: #333; 
+}
+
+/* Imagens dos Links */
+.sidebar-img { 
+    width: 25px; 
+    height: 25px; 
+    margin-right: 15px; 
+    border-radius: 3px; 
+    object-fit: cover;
+}
+
+.sidebar-divider {
+    border: 0; 
+    border-top: 1px solid #333; 
+    margin: 10px 0;
+}
+
+/* Customização dos botões de Salvar/Exportar */
+.sidebar-link.btn-nav-save { color: #22c55e; }
+.sidebar-link.btn-nav-save:hover { background: rgba(34, 197, 94, 0.1); }
+
+.sidebar-link.btn-nav-export { color: #eab308; }
+.sidebar-link.btn-nav-export:hover { background: rgba(234, 179, 8, 0.1); }
+
+/* Layout da página de Equipamentos */
+.equip-container {
+    max-width: 800px;
+    margin: 90px auto 30px auto; /* Aumentado de 30px para 90px no topo para não sumir atrás da navbar */
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.85); /* Fundo escuro semi-transparente estilo caixa do início */
+    border: 1px solid #27273a;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    color: #ff0055;
+    border-bottom: 1px solid #27273a;
+    padding-bottom: 8px;
+}
+
+/* Slots Equipados */
+.slots-layout {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+.equip-slot-box {
+    background: #16161f;
+    border: 2px dashed #3f3f56;
+    border-radius: 8px;
+    padding: 10px;
+    width: 150px;
+    min-height: 100px; /* Garante que a imagem + textos caibam sem estourar a caixa */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.equip-slot-box:hover {
+    border-color: #ff0055;
+    background: #1c1c27;
+}
+.slot-label {
+    font-size: 0.75rem;
+    color: #888;
+    display: block;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+.slot-display {
+    font-weight: bold;
+    color: #a855f7;
+}
+
+/* Grid do Inventário de Equipamentos */
+.inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 12px;
+    background: #16161f;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #27273a;
+}
+.inventory-slot {
+    width: 70px;
+    height: 70px;
+    background: #22222f;
+    border: 2px solid #3f3f56;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+}
+.inventory-slot:hover {
+    border-color: #a855f7;
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
+}
+.item-qty {
+    position: absolute; bottom: 4px; right: 6px;
+    font-size: 0.75rem; background: rgba(0,0,0,0.7);
+    padding: 1px 5px; border-radius: 4px; color: #fff;
+}
+
+/* Modal */
+.modal {
+    position: fixed; top:0; left:0; width:100%; height:100%;
+    background: rgba(0,0,0,0.8); display:none; justify-content:center; align-items:center; z-index:1000;
+}
+.modal-content {
+    background: #16161f; padding: 25px; border-radius: 12px;
+    width: 90%; max-width: 350px; text-align: center; border: 2px solid #a855f7;
+    position: relative;
+}
+.close-modal { position: absolute; top: 10px; right: 15px; font-size: 1.5rem; cursor: pointer; color: #888; }
+.modal-icon { font-size: 3.5rem; margin-bottom: 10px; }
+.item-tag { background: #a855f7; color: white; padding: 2px 8px; border-radius: 20px; font-size: 0.8rem; }
+.modal-desc { color: #aaa; font-size: 0.9rem; margin: 15px 0; }
+.modal-attributes { background: #22222f; padding: 10px; border-radius: 6px; margin-bottom: 15px; font-size: 0.85rem; color: #22c55e;}
+.btn-equip {
+    background: #22c55e; border: none; color: white; padding: 10px 20px;
+    border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%;
+}
+.btn-equip:hover { background: #16a34a; }

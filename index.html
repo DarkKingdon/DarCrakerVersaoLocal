@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarCraker - Início</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="menu-container">
+        <h1 class="game-title">DarCraker</h1>
+        
+        <div class="menu-buttons">
+            <button class="btn-menu btn-start" onclick="novoJogo()">NOVO JOGO</button>
+            <button class="btn-menu btn-load" onclick="abrirMenuSlots()">JOGO SALVO</button>
+            <button class="btn-menu btn-import" onclick="importarSaveArquivo()">IMPORTAR SAVE (ARQUIVO)</button>
+        </div>
+    </div>
+
+    <!-- JANELA MODAL INVISÍVEL DOS 3 SLOTS (Aparece ao clicar em JOGO SALVO) -->
+    <div id="modal-slots" class="modal-container" style="display: none;">
+        <div class="modal-content">
+            <h2>Escolha um Slot</h2>
+            <button class="btn-slot" onclick="escolherSlotParaCarregar('1')">Slot 1: <span id="slot-1-info">Vazio</span></button>
+            <button class="btn-slot" onclick="escolherSlotParaCarregar('2')">Slot 2: <span id="slot-2-info">Vazio</span></button>
+            <button class="btn-slot" onclick="escolherSlotParaCarregar('3')">Slot 3: <span id="slot-3-info">Vazio</span></button>
+            <button class="btn-menu btn-start" onclick="fecharMenuSlots()" style="margin-top: 15px;">Voltar</button>
+        </div>
+    </div>
+
+    <!-- NOVO MODAL INTERATIVO: CRIAR NOVO JOGO (Aparece ao clicar em NOVO JOGO) -->
+    <div id="modal-novo-jogo" class="modal-container" style="display: none;">
+        <div class="modal-content" style="border-color: #ff0055; box-shadow: 0 0 25px rgba(255, 0, 85, 0.5);">
+            <h2>Iniciar Nova Jornada</h2>
+            <p style="margin-bottom: 20px; color: #bbb;">Selecione o Slot onde deseja salvar seu novo Herói:</p>
+            
+            <button class="btn-slot btn-slot-novo" onclick="confirmarSlotNovoJogo('1')">Slot 1 <small id="novo-slot-1-obs" style="display:block; font-size:0.8rem; color:#aaa;"></small></button>
+            <button class="btn-slot btn-slot-novo" onclick="confirmarSlotNovoJogo('2')">Slot 2 <small id="novo-slot-2-obs" style="display:block; font-size:0.8rem; color:#aaa;"></small></button>
+            <button class="btn-slot btn-slot-novo" onclick="confirmarSlotNovoJogo('3')">Slot 3 <small id="novo-slot-3-obs" style="display:block; font-size:0.8rem; color:#aaa;"></small></button>
+            
+            <button class="btn-menu btn-load" onclick="fecharModalNovoJogo()" style="margin-top: 15px; background-color: #333; border-color: #555;">Cancelar</button>
+        </div>
+    </div>
+
+
+
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarCraker - Loja do Vendedor</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="vendedor.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">DarCraker</div>
+        <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
+    </div>
+
+    <nav id="sidebar" class="sidebar">
+        <div class="sidebar-content">
+            <a href="../../../inicio/inicio.html" id="btn-home" class="sidebar-link">
+                <img src="../../../img/icones/inicio.jpg" id="img-home" alt="Início" class="sidebar-img">
+                <span>Início</span>
+            </a>
+            
+            <a href="../../../heroi/heroi.html" id="btn-heroi" class="sidebar-link">
+                <img src="../../../img/icones/heroi.jpg" id="img-heroi" alt="heroi" class="sidebar-img">
+                <span>Herói</span>
+            </a>
+
+            <a href="../../../mundo/mundo.html" id="btn-mundo" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../../img/icones/mundo.jpg" id="img-mundo" alt="mundo" class="sidebar-img">
+                <span>Mundo</span>
+            </a>
+            
+            <a href="../../../bestiario/bestiario.html" id="btn-bestiario-poring" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../../img/icones/bestiario.jpg" id="img-bestiario" alt="Bestiário" class="sidebar-img">
+                <span>Bestiário</span>
+            </a>
+
+            <a href="../../../index.html" id="btn-sair" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../../img/icones/sair.jpg" id="img-sair" alt="Sair" class="sidebar-img">
+                <span>Sair</span>
+            </a>
+            
+            <hr class="sidebar-divider">
+            
+            <a href="#" onclick="salvarNoSlotAtual(); return false;" class="sidebar-link btn-nav-save">
+                <span>💾 Salvar no Slot</span>
+            </a>
+            
+            <a href="#" onclick="exportarSaveFisico(); return false;" class="sidebar-link btn-nav-export">
+                <span>📤 Exportar Backup</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="game-container">
+        <div class="vendedor-header">
+            <h2>Mercador de Suprimentos</h2>
+            <p>Precisa de provisões, equipamentos ou comida para seu mascote? Gaste suas Moedas de Ouro aqui e prepare-se para os perigos de DarCraker!</p>
+        </div>
+
+        <div class="vitrine-vendedor">
+            <div class="vitrine-header-container">
+                <div class="vitrine-titulo">🛒 Itens Disponíveis para Compra</div>
+                
+                <div class="ouro-display">
+                    <span class="ouro-icone">
+                        <img src="../../../img/objeto_comun/moedas_de_ouro.jpg" alt="Ouro" class="moeda-img">
+                    </span> 
+                    <span id="saldo-ouro">0</span>
+                </div>
+            </div>
+            
+            <!-- Seções divididas por Categorias de Sanfona -->
+            <div class="vendedor-categorias-container">
+                
+                <!-- 1. SUPRIMENTOS -->
+                <div class="categoria-box">
+                    <div class="categoria-header" onclick="toggleCategoria('suprimentos', this)">
+                        <span class="categoria-titulo"><i class="fas fa-cookie-bite"></i> Suprimentos</span>
+                        <i class="fas fa-chevron-up seta-categoria"></i>
+                    </div>
+                    <div id="cat-suprimentos" class="categoria-conteudo active">
+                        <div class="vendedor-grid" id="grid-suprimentos"></div>
+                    </div>
+                </div>
+
+                <!-- 2. EQUIPAMENTOS -->
+                <div class="categoria-box">
+                    <div class="categoria-header" onclick="toggleCategoria('equipamentos', this)">
+                        <span class="categoria-titulo"><i class="fas fa-shield-alt"></i> Equipamentos</span>
+                        <i class="fas fa-chevron-down seta-categoria"></i>
+                    </div>
+                    <div id="cat-equipamentos" class="categoria-conteudo">
+                        <div class="vendedor-grid" id="grid-equipamentos"></div>
+                    </div>
+                </div>
+
+                <!-- 3. ITENS PARA ALQUIMIA -->
+                <div class="categoria-box">
+                    <div class="categoria-header" onclick="toggleCategoria('alquimia', this)">
+                        <span class="categoria-titulo"><i class="fas fa-flask"></i> Itens para Alquimia</span>
+                        <i class="fas fa-chevron-down seta-categoria"></i>
+                    </div>
+                    <div id="cat-alquimia" class="categoria-conteudo">
+                        <div class="vendedor-grid" id="grid-alquimia"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="valor_vendedor.js"></script>
+    <script src="vendedor.js"></script>
+</body>
+</html>

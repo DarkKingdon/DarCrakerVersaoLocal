@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarCraker - Regiões</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="regioes.css">
+</head>
+<body>
+
+    <!-- Barra do topo fixa -->
+    <div class="navbar">
+        <div class="logo">DarCraker</div>
+        <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
+    </div>
+
+    <!-- Menu Lateral (Sidebar) -->
+    <nav id="sidebar" class="sidebar">
+        <div class="sidebar-content">
+            <a href="../../inicio/inicio.html" id="btn-home" class="sidebar-link">
+                <img src="../../img/icones/inicio.jpg" id="img-home" alt="Início" class="sidebar-img">
+                <span>Início</span>
+            </a>
+            
+            <a href="../../heroi/heroi.html" id="btn-heroi" class="sidebar-link">
+                <img src="../../img/icones/heroi.jpg" id="img-heroi" alt="heroi" class="sidebar-img">
+                <span>Herói</span>
+            </a>
+
+            <a href="../../mundo/mundo.html" id="btn-mundo" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../img/icones/mundo.jpg" id="img-mundo" alt="mundo" class="sidebar-img">
+                <span>Mundo</span>
+            </a>
+            
+            
+            
+            <a href="../../bestiario/bestiario.html" id="btn-bestiario-poring" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../img/icones/bestiario.jpg" id="img-bestiario" alt="Bestiário" class="sidebar-img">
+                <span>Bestiário</span>
+            </a>
+
+            <a href="../../index.html" id="btn-sair" class="sidebar-link" style="border-left: 2px solid #ff0055;">
+                <img src="../../img/icones/sair.jpg" id="img-sair" alt="Sair" class="sidebar-img">
+                <span>Sair</span>
+            </a>
+            
+            <hr class="sidebar-divider">
+            
+            <a href="#" onclick="salvarNoSlotAtual(); return false;" class="sidebar-link btn-nav-save">
+                <span>💾 Salvar no Slot</span>
+            </a>
+            
+            <a href="#" onclick="exportarSaveFisico(); return false;" class="sidebar-link btn-nav-export">
+                <span>📤 Exportar Backup</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Estrutura de Layout do Menu Regiões -->
+    <div class="game-container">
+        <div class="regioes-header">
+            <h2>Regiões do Mundo</h2>
+
+
+            <!-- Imagem Temática do Regioes adicionada aqui -->
+            <div class="regioes-container">
+                <img src="../../img/icones/regioes.jpg" alt="Ícone regioes" class="regioes-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="regioes-icon" style="display: none;">🐉</div>
+            </div>
+
+
+
+            <p>Selecione um território para explorar seus mistérios, encontrar monstros específicos da região, coletar recursos raros e liberar novas missões.</p>
+        </div>
+
+        <!-- Grid de Cards de Regiões -->
+        <div class="regioes-grid">
+            
+            <!-- Card 1: Continente Inicial / Planície -->
+            <a href="asmon/asmon.html" class="regioes-card" id="card-asmon" style="text-decoration: none;">
+                <div class="regioes-img-container">
+                    <img src="../../img/icones/asmon.jpg" alt="Asmon" class="regioes-card-img">
+                </div>
+                <div class="regioes-card-info">
+                    <h3>Asmon</h3>
+                    <h3>Nível 1 - 10</h3>
+                </div>
+            </a>
+
+            
+
+        </div>
+    </div>
+
+    <script src="regioes.js"></script>
+</body>
+</html>

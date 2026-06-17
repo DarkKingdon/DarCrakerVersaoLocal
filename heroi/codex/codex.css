@@ -1,0 +1,311 @@
+/* =========================================================================
+   ESTILOS GERAIS DE ESTRUTURA (Importados e adaptados do heroi.css)
+   ========================================================================= */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url('../../img/fundo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+/* Barra do topo fixa */
+.navbar {
+    width: 100%;
+    box-sizing: border-box; 
+    background: black;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ff0055;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    font-family: sans-serif;
+}
+
+.logo { 
+    color: #ff0055; 
+    font-size: 1.5em; 
+    font-weight: bold; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.menu-toggle { 
+    color: white; 
+    cursor: pointer; 
+    font-size: 1.8em; 
+    transition: 0.3s; 
+}
+
+.menu-toggle:hover { 
+    color: #ff0055; 
+}
+
+/* Menu Lateral (Sidebar) */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background: black;
+    transition: 0.4s;
+    z-index: 999;
+    padding-top: 80px;
+    border-left: 2px solid #ff0055;
+    font-family: sans-serif;
+}
+
+.sidebar.active { 
+    right: 0; 
+}
+
+.sidebar-content { 
+    display: flex; 
+    flex-direction: column; 
+    padding: 20px; 
+}
+
+/* Links da Sidebar */
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background: #252525;
+    transition: 0.3s;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.sidebar-link:hover { 
+    background: #333; 
+}
+
+.sidebar-img { 
+    width: 25px; 
+    height: 25px; 
+    margin-right: 15px; 
+    border-radius: 3px; 
+    object-fit: cover;
+}
+
+.sidebar-divider {
+    border: 0; 
+    border-top: 1px solid #333; 
+    margin: 10px 0;
+}
+
+/* Botões de Salvar/Exportar */
+.sidebar-link.btn-nav-save { color: #22c55e; }
+.sidebar-link.btn-nav-save:hover { background: rgba(34, 197, 94, 0.1); }
+
+.sidebar-link.btn-nav-export { color: #eab308; }
+.sidebar-link.btn-nav-export:hover { background: rgba(234, 179, 8, 0.1); }
+
+/* Layout Geral */
+.game-container {
+    max-width: 1000px;
+    margin: 80px auto 20px auto;
+    padding: 0 20px;
+}
+
+/* Container da imagem/ícone no cabeçalho */
+.codex-container {
+    margin: 15px auto; /* Adiciona espaçamento perfeito entre o H2 e o P */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.codex-img {
+    width: 100px;       
+    height: 100px;
+    object-fit: contain;
+    image-rendering: pixelated; 
+    border-radius: 8px;
+    border: 1px solid #ff0055; /* Borda sutil combinando com o tema rosa */
+    filter: drop-shadow(0 0 8px rgba(255, 0, 85, 0.4)); /* Destaque neon rosa */
+}
+
+.codex-icon {
+    font-size: 3.5rem;
+    margin: 10px 0;
+}
+
+/* Cabeçalho principal */
+.heroi-header {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid #ff0055;
+    padding: 20px;
+    border-radius: 8px;
+    color: #fff;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(255, 0, 85, 0.2);
+}
+
+.heroi-header h2 {
+    color: #ff0055;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.heroi-header p {
+    color: #b3b3b3;
+    font-size: 1rem;
+}
+
+/* =========================================================================
+   CONFIGURAÇÕES EXCLUSIVAS DA GRID E CARDS DO CODEX (4 Colunas)
+   ========================================================================= */
+
+/* Grid redimensionada para 4 colunas */
+/* Grid redimensionada para 4 colunas */
+.codex-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 3fr);
+    gap: 5px; /* Reduzido levemente o espaçamento entre os cards */
+}
+
+/* Card menor adaptado para o Codex */
+.codex-card {
+    background: rgba(15, 15, 15, 0.95);
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    max-width: 150px; /* Reduzido de 240px para 180px */
+    margin: 0 auto;
+    width: 100%;
+}
+
+.codex-card:hover {
+    transform: translateY(-3px);
+    border-color: #ff0055;
+    box-shadow: 0 6px 15px rgba(255, 0, 85, 0.25);
+}
+
+/* Container da imagem do item */
+.codex-img-container {
+    position: relative;
+    width: 100%;
+    height: 90px; /* Reduzido de 130px para 90px */
+    background: #0a0a0a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+}
+
+.codex-card-img {
+    max-width: 65px; /* Reduzido de 80px para 55px */
+    max-height: 65px; /* Reduzido de 80px para 55px */
+    border-radius: 5px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.codex-card:hover .codex-card-img {
+    transform: scale(1.1);
+}
+
+/* Informações do item */
+.codex-card-info {
+    padding: 8px 5px; /* Reduzido para abraçar melhor o texto */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    background: rgba(20, 20, 20, 0.8); /* Um leve tom diferenciado para destacar o nome */
+}
+
+.codex-card-info h3 {
+    font-size: 0.9rem; /* Ajustado levemente para caber bem no card de 150px */
+    margin: 0; /* Remove margens desnecessárias */
+    color: #fff;
+    text-align: center;
+    white-space: nowrap; /* Evita que o nome do item quebre em duas linhas */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Se o nome for gigante, ele coloca "..." */
+}
+
+.codex-card-info p {
+    font-size: 0.9rem;
+    color: #aaaaaa;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.monster-badge {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: rgb(255, 255, 255);
+    color: #000000; /* Rosa Neon do tema principal */
+    border: 1px solid #ff0055;
+    padding: 2px 5px;
+    font-size: 0.65rem;
+    font-weight: bold;
+    border-radius: 4px;
+    font-family: monospace;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 5px rgba(255, 0, 85, 0.5);
+    z-index: 10;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (AJUSTE PARA RESPONSIVIDADE)
+   ========================================================================== */
+
+/* Para tablets e telas médias (ex: exibe 3 ou 4 cards por linha) */
+@media screen and (max-width: 768px) {
+    .game-container {
+        margin-top: 75px; 
+        padding: 0 10px;
+    }
+    
+    .codex-grid {
+        /* Muda para 3 colunas de tamanhos iguais */
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 12px;
+        justify-content: center;
+    }
+}
+
+/* Para celulares menores (ex: exibe 2 cards lado a lado perfeitamente) */
+@media screen and (max-width: 480px) {
+    .codex-grid {
+        /* Muda para 2 colunas, evitando que os cards fiquem esmagados */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        justify-items: center; /* Centraliza os cards dentro do espaço da grade */
+    }
+
+    .codex-card {
+        max-width: 140px; /* Ajuste leve para caber melhor em telas muito finas */
+    }
+}
